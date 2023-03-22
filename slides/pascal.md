@@ -1,5 +1,13 @@
-## "Version Repository"
-### A GitOps repository for a full-stack, multi-repository app
+## Version Control for your full-stack JS app
+How to version control a full-stack, multiple-service app, and run Versions with one-click
+
+
+
+What do we use for regular version control?
+* Git <!-- .element: class="fragment" style="text-align: left;" -->
+
+What do we use for version controlling <br/>multi-service apps? <!-- .element: class="fragment" -->
+* GitOps <!-- .element: class="fragment" -->
 
 
 
@@ -160,18 +168,3 @@ local params = import 'params.jsonnet';
 ## Summing up 
 
 The point of a Version Repository is to make a "Version" of a multi-service app into a “function” of the git commits of its component services
-
-
-
-Version Repository `params.yaml`
-
-<pre><code data-trim data-noescape>
-version-store-frontend:
-  - name: VERSION_STORE_FRONTEND_SHA
-    type: GIT_COMMIT_SHA
-    description: The commit hash of the version-store-frontend repo, e.g. ff58cc556269ede04ef6045465aafb2ed5747903
-version-store-backend:
-  - name: VERSION_STORE_BACKEND_SHA
-    type: GIT_COMMIT_SHA
-    description: The commit hash of the version-store-backend repo, e.g. 142b56b046d32eef4dc159359cb29d54a4c02b98
-</code></pre>

@@ -1,0 +1,46 @@
+So what can we do with this "function"?
+
+![File layout of a Version Repository](/images/VersionRepoToVersions.png "Version Repository to Versions") <!-- .element: style="max-width: 65%" -->
+
+
+
+We can:
+- allow non-developers to run and test any version of the app with one click <!-- .element: class="fragment" -->
+- securely invite external stakeholders to view any pre-release version of the app <!-- .element: class="fragment" -->
+- debug any combination of source commits in isolation <!-- .element: class="fragment" -->
+- debug different "states" of the app by loading different seed data into the same commits <!-- .element: class="fragment" -->
+- and much more <!-- .element: class="fragment" -->
+
+
+
+That was all "manual". We can also automatically:
+- build & run the latest Version of any feature/release/PR branch <!-- .element: class="fragment" -->
+- run time-consuming e2e tests on every commit <!-- .element: class="fragment" -->
+- create a Version on seeing a magic word in a commit message <!-- .element: class="fragment" -->
+- create a Version on receiving messages in Slack or similar <!-- .element: class="fragment" -->
+- etc <!-- .element: class="fragment" -->
+
+
+
+But there's another *crazy* thing we can do...
+
+
+
+Hello ChatGPT!
+
+- ChatGPT can generate and edit code! <!-- .element: class="fragment" -->
+- It's not perfect! But it can be useful, and it's improving very quickly. <!-- .element: class="fragment" -->
+- If it's a junior frontend developer today, it could be a mid-level, full-stack developer by the end of the year. <!-- .element: class="fragment" -->
+
+
+
+Would you let ChatGPT _eval_ directly in your terminal?
+
+Personally, I would not (especially not Bing) <!-- .element: class="fragment" -->
+
+But what if we could eval it's responses in a sandboxed environment... like a Version? <!-- .element: class="fragment" -->
+
+
+
+Putting it all together...
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FcEMki65Nf1NNhr3YMqPGoZ%2FVersion-Lens-Video-Prototype%3Fnode-id%3D295-1508%26viewport%3D370%252C146%252C0.03%26scaling%3Dscale-down%26starting-point-node-id%3D295%253A1508" allowfullscreen></iframe>
