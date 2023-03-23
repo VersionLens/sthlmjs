@@ -1,6 +1,9 @@
 ## Version Control for your full-stack JS app
 How to version control a full-stack, multiple-service app, and run Versions with one-click
-
+Note:
+- Hi I'm Pascal and this is Fredrik, we work at a startup called Version Lens
+- As you might tell from the name and this talk, Versions are very important to us
+- I think all of us in this room think that version controlling source code is a no-brainer, our argument today is that version-controlling a full-stack app should be too.
 
 
 What do we use for regular version control?
@@ -8,7 +11,8 @@ What do we use for regular version control?
 
 What do we use for version controlling <br/>multi-service apps? <!-- .element: class="fragment" -->
 * GitOps <!-- .element: class="fragment" -->
-
+Note:
+- GitOps is a way of managing everything around the source code - build, deployment, infrastructure, etc, in a Git repository, and syncing that with the cloud.
 
 
 What should a GitOps repository for a full-stack, <br/>multi-repository app contain?
@@ -22,18 +26,25 @@ What should a GitOps repository for a full-stack, <br/>multi-repository app cont
 Version Repository layout
 
 ![File layout of a Version Repository](/images/version-repo-layout.png "Version Repository Layout")
-Note: Here we click on `build`
-
+Note: 
+- Context: let's imagine we're running a full-stack JS app, with a NodeJS backend and a SvelteKit frontend
+- This is an e-commerce demo site, called The Version Store.
+- We have two folders for the two steps: building images and running them
+- Let's look inside `build`
 
 
 Version Repository `build/`
 ![File layout of build/](/images/version-repo-build.png "Version Repository build/")
-Note: Here we click on `version-store-backend`
+Note: 
+- Here we have two services: the frontend and the backend
+- Let's look inside `version-store-backend`
 
 
 Version Repository `build/{service}`
 ![File layout of build/{service}](/images/version-repo-build-backend.png "Version Repository build/{service}")
-Note: Here we click on `build_params.yaml`
+Note: 
+- Two important files here: a workflow for building an image, and a file with parameters for that workflow.
+- Let's look at the parameters first:
 
 
 Version Repository `build/{service}/build_params.yaml`
@@ -49,7 +60,10 @@ repo_dependencies:
     commit: $VERSION_STORE_BACKEND_SHA
     url: https://github.com/VersionLens/version-store-backend-nodejs.git
 </code></pre>
-
+Note: 
+- Source repositories on the bottom
+- As you can see the commit hash is a variable
+- Important: we use the commit hash from the source repository as the image tag. This is the core of GitOps, knowing exactly which version of a service is inside the Docker image, and then running as part of the app.
 
 Building a service image
 - We use Argo Workflows, which are like K8S Jobs on steroids <!-- .element: class="fragment" -->
@@ -95,8 +109,9 @@ Version Repository `build/{service}/build.argo.yaml`
       - name: versionlens-regcred
         mountPath: /kaniko/.docker/
 </code></pre>
-
-
+Note:
+- And that's it! We do the same for all the services, frontend and backend here, in parallel.
+- Let's go back to the Version Repository and look in the other folder.
 
 Version Repository layout
 
@@ -127,14 +142,15 @@ Version Repository `run/params.jsonnet`
   },
 }
 </code></pre>
-
+Note: This is where we use the same commit SHA variables.
 
 Running the multi-service app
 - We use ArgoCD + Jsonnet <!-- .element: class="fragment" -->
 - Why not helm / kustomize? <!-- .element: class="fragment" -->
-    - They feel a bit like overkill but you could easily use them if you like
+    - They feel a bit like overkill to us but you could easily use them if you like
 - You could also use something like Flux etc here instead <!-- .element: class="fragment" -->
-
+Note:
+- ArgoCD just looks at a folder with JSonnet or JSON files and keeps the manifests in sync with a k8s cluster.
 
 How do we orchestrate the boot-up<br/> of a multi-service app?
 - Standard k8s: <!-- .element: class="fragment" -->
@@ -162,7 +178,7 @@ local params = import 'params.jsonnet';
     ],
   ...
 </code></pre>
-
+Note: This is standard k8s, just note that we're using the image tag which is the commit SHA from the source repository.
 
 
 ## Summing up 
