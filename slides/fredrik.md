@@ -44,3 +44,11 @@ But what if we could eval it's responses in a sandboxed environment... like a Ve
 
 Putting it all together...
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FcEMki65Nf1NNhr3YMqPGoZ%2FVersion-Lens-Video-Prototype%3Fnode-id%3D295-1508%26viewport%3D370%252C146%252C0.03%26scaling%3Dscale-down%26starting-point-node-id%3D295%253A1508" allowfullscreen></iframe>
+
+
+
+## Thank you
+- This presentation: [sthlmjs.versionlens.com](https://sthlmjs.versionlens.com)
+- Full-stack JS Version Repository: [github.com/VersionLens/version-store-version-repository](https://github.com/VersionLens/version-store-version-repository)
+- [versionlens.com](https://versionlens.com)
+- pascal@versionlens.com, fredrik@versionlens.com
