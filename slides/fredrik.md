@@ -4,21 +4,22 @@ So what can we do with this "function"?
 
 
 
-With one-click, we can:
+Why?
+* Collaboration <!-- .element: class="fragment" -->
+* Debugging <!-- .element: class="fragment" -->
+* A/B testing <!-- .element: class="fragment" -->
+
+Note:
 - allow non-developers to run and test any version of the app <!-- .element: class="fragment" -->
-- securely invite external stakeholders to view any pre-release version of the app <!-- .element: class="fragment" -->
 - save hours of senior dev time spent switching locally to other dev's branches, for coordination <!-- .element: class="fragment" -->
 - debug any combination of source commits in isolation, with specific data loaded <!-- .element: class="fragment" -->
-- and much more <!-- .element: class="fragment" -->
 
 
 
-With *zero* clicks, we can:
+How Versions fit in your workflow:
 - build & run the latest Version of any feature/release/PR branch <!-- .element: class="fragment" -->
-- run time-consuming e2e tests on every commit <!-- .element: class="fragment" -->
 - create a Version on seeing a magic word in a commit message <!-- .element: class="fragment" -->
 - create a Version on receiving messages in Slack or similar <!-- .element: class="fragment" -->
-- etc <!-- .element: class="fragment" -->
 
 
 
