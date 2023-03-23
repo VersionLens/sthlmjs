@@ -34,6 +34,7 @@ Note:
 - Context: let's imagine we're running a full-stack JS app, with a NodeJS backend and a SvelteKit frontend
 - This is an e-commerce demo site, called The Version Store.
 - We have two folders for the two steps: building images and running them
+- This is an open source repository, you can use it as a template, see link at the end of this talk
 - Let's look inside `build`
 
 
