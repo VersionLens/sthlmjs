@@ -4,16 +4,16 @@ So what can we do with this "function"?
 
 
 
-We can:
-- allow non-developers to run and test any version of the app with one click <!-- .element: class="fragment" -->
+With one-click, we can:
+- allow non-developers to run and test any version of the app <!-- .element: class="fragment" -->
 - securely invite external stakeholders to view any pre-release version of the app <!-- .element: class="fragment" -->
-- debug any combination of source commits in isolation <!-- .element: class="fragment" -->
-- debug different "states" of the app by loading different seed data into the same commits <!-- .element: class="fragment" -->
+- save hours of senior dev time spent switching locally to other dev's branches, for coordination <!-- .element: class="fragment" -->
+- debug any combination of source commits in isolation, with specific data loaded <!-- .element: class="fragment" -->
 - and much more <!-- .element: class="fragment" -->
 
 
 
-That was all "manual". We can also automatically:
+With *zero* clicks, we can:
 - build & run the latest Version of any feature/release/PR branch <!-- .element: class="fragment" -->
 - run time-consuming e2e tests on every commit <!-- .element: class="fragment" -->
 - create a Version on seeing a magic word in a commit message <!-- .element: class="fragment" -->
