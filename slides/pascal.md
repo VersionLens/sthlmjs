@@ -75,6 +75,10 @@ Building a service image
   - Docker build & push using Kaniko
 - You could use any workflow system here, e.g. Tekton, etc. <!-- .element: class="fragment" -->
 - We build all services in parallel, and steps can run in parallel if desired <!-- .element: class="fragment" -->
+Note:
+- K8s Jobs are like scripts that can run in a cluster
+- K8s jobs don't scale very well in complexity, so we use Argo Workflow which is better
+- Kaniko is Google's open-source in-cluster image builder, I believe they use this in Google Cloud Build
 
 
 Version Repository `build/{service}/build.argo.yaml`
@@ -93,6 +97,7 @@ Version Repository `build/{service}/build.argo.yaml`
     - name: workspace
         mountPath: /workspace
 </code></pre>
+Note: Important here is that we check out a specific commit - again the core of GitOps.
 
 
 Version Repository `build/{service}/build.argo.yaml`
@@ -126,7 +131,9 @@ Note: Here we click on `run`
 
 Version Repository `run/`
 ![File layout of run/](/images/version-repo-run.png "Version Repository run/")
-Note: Here we click on `params.jsonnet`
+Note: 
+- Important: building was separate, but now we're now dealing with all services at the same time
+- Here we click on `params.jsonnet`
 
 
 Version Repository `run/params.jsonnet`
@@ -146,7 +153,9 @@ Version Repository `run/params.jsonnet`
   },
 }
 </code></pre>
-Note: This is where we use the same commit SHA variables.
+Note: 
+- This is where we use the same commit SHA variables.
+
 
 Running the multi-service app
 - We use ArgoCD + Jsonnet <!-- .element: class="fragment" -->
@@ -155,6 +164,7 @@ Running the multi-service app
 - You could also use something like Flux etc here instead <!-- .element: class="fragment" -->
 Note:
 - ArgoCD just looks at a folder with JSonnet or JSON files and keeps the manifests in sync with a k8s cluster.
+
 
 How do we orchestrate the boot-up<br/> of a multi-service app?
 - Standard k8s: <!-- .element: class="fragment" -->
