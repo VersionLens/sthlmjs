@@ -9,9 +9,9 @@ Why?
 * Debugging <!-- .element: class="fragment" -->
 * A/B testing <!-- .element: class="fragment" -->
 Note:
-- allow non-developers to run and test any version of the app <!-- .element: class="fragment" -->
-- save hours of senior dev time spent switching locally to other dev's branches, for coordination <!-- .element: class="fragment" -->
-- debug any combination of source commits in isolation, with specific data loaded <!-- .element: class="fragment" -->
+- allow non-developers to run and test any version of the app
+- save hours of senior dev time spent switching locally to other dev's branches, for coordination
+- debug any combination of source commits in isolation, with specific data loaded
 
 
 
