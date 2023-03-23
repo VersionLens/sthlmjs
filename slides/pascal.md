@@ -22,7 +22,9 @@ What should a GitOps repository for a full-stack, <br/>multi-repository app cont
     - Note: Each service may be built from source code from one or more source repositories
 1. Running instructions for the multi-service app as a whole <!-- .element: class="fragment" -->
     - Including instructions on how to repeatably "boot-up" the distributed app
-
+Note:
+- It comes down to Docker images - building and running them
+- When we talk about a service, we mean a docker image and then a docker container - e.g. frontend, backend, database etc
 
 
 Version Repository layout
