@@ -6,6 +6,7 @@ Note:
 - I think all of us in this room think that version controlling source code is a no-brainer, our argument today is that version-controlling a full-stack app should be too.
 
 
+
 What do we use for regular version control?
 * Git <!-- .element: class="fragment" style="text-align: left;" -->
 
@@ -13,6 +14,7 @@ What do we use for version controlling <br/>multi-service apps? <!-- .element: c
 * GitOps <!-- .element: class="fragment" -->
 Note:
 - GitOps is a way of managing everything around the source code - build, deployment, infrastructure, etc, in a Git repository, and syncing that with the cloud.
+
 
 
 What should a GitOps repository for a full-stack, <br/>multi-repository app contain?
@@ -65,6 +67,7 @@ Note:
 - As you can see the commit hash is a variable
 - Important: we use the commit hash from the source repository as the image tag. This is the core of GitOps, knowing exactly which version of a service is inside the Docker image, and then running as part of the app.
 
+
 Building a service image
 - We use Argo Workflows, which are like K8S Jobs on steroids <!-- .element: class="fragment" -->
 - General steps are: <!-- .element: class="fragment" -->
@@ -113,11 +116,12 @@ Note:
 - And that's it! We do the same for all the services, frontend and backend here, in parallel.
 - Let's go back to the Version Repository and look in the other folder.
 
+
+
 Version Repository layout
 
 ![File layout of a Version Repository](/images/version-repo-layout.png "Version Repository Layout")
 Note: Here we click on `run`
-
 
 
 Version Repository `run/`
@@ -179,6 +183,7 @@ local params = import 'params.jsonnet';
   ...
 </code></pre>
 Note: This is standard k8s, just note that we're using the image tag which is the commit SHA from the source repository.
+
 
 
 ## Summing up 
